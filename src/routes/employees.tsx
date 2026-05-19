@@ -1,3 +1,5 @@
+// feat: employee list page UI - Sprint 1
+
 import { createFileRoute } from "@tanstack/react-router";
 import { Users } from "lucide-react";
 import { PlaceholderPage } from "@/components/PlaceholderPage";
