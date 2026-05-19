@@ -39,7 +39,7 @@ A full-stack Human Resource System built with React, Supabase, and TanStack Rout
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Jasper-Pasco/Human-Resource-System-GROUP4.git
+git clone https://github.com/kyleecoles/Human-Resource-System-GROUP4.git
 cd Human-Resource-System-GROUP4
 ```
 
