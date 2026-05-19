@@ -1,3 +1,4 @@
+// feat: register page UI - Sprint 1
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Loader2, User, AtSign, Mail, Lock } from "lucide-react";
