@@ -61,17 +61,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Restore session on mount
-    supabase.auth.getSession().then(({ data: { session: initialSession } }) => {
-      setSession(initialSession);
-      if (initialSession?.user) {
-        loadAppUser(initialSession.user).then((appUser) => {
-          if (appUser) setCurrentUser(appUser);
-          setLoading(false);
-        });
-      } else {
-        setLoading(false);
-      }
+    supabase.auth.getSession().then(({ data: { session: initialSession }, error }) => {
+  if (error) {
+    console.error("[AuthContext] getSession failed:", error.message);
+    setCurrentUser(null);
+    setSession(null);
+    setLoading(false);
+    return;
+  }
+
+  setSession(initialSession);
+  if (initialSession?.user) {
+    loadAppUser(initialSession.user).then((appUser) => {
+      if (appUser) setCurrentUser(appUser);
+      setLoading(false);
     });
+  } else {
+    setLoading(false);
+  }
+});
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, newSession) => {
