@@ -1,4 +1,5 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { AuthProvider } from "@/contexts/AuthContext";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -20,6 +21,14 @@ function NotFoundComponent() {
         </div>
       </div>
     </div>
+  );
+}
+
+function RootComponent() {
+  return (
+    <AuthProvider>
+      <Outlet />
+    </AuthProvider>
   );
 }
 
@@ -50,7 +59,7 @@ export const Route = createRootRoute({
     ],
   }),
   shellComponent: RootShell,
-  component: () => <Outlet />,
+  component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
 
