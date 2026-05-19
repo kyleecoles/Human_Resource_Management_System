@@ -1,3 +1,5 @@
+// feat: auth callback page UI - Sprint 1
+
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Loader2 } from "lucide-react";
