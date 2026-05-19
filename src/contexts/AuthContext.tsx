@@ -61,7 +61,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Restore session on mount
-    supabase.auth.getSession().then(({ data: { session: initialSession } }) => {
+    supabase.auth.getSession().then(({ data: { session: initialSession }, error }) => {
+      if (error) {
+        console.error("[AuthContext] getSession failed:", error.message);
+        setCurrentUser(null);
+        setSession(null);
+        setLoading(false);
+        return;
+      }
+
       setSession(initialSession);
       if (initialSession?.user) {
         loadAppUser(initialSession.user).then((appUser) => {
