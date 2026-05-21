@@ -1,7 +1,7 @@
-# Hope, Inc. — Human Resource System
+# Hope, Inc. — Human Resource Management System
 > IM2 Group 4 Project | New Era University — College of Computer Studies
 
-A full-stack Human Resource System built with React, Supabase, and TanStack Router. This system manages employees, job history, departments, jobs, and user administration with role-based access control.
+A full-stack Human Resource Management System built with React, Supabase, and TanStack Router. This system manages employees, job history, departments, jobs, and user administration with role-based access control.
 
 ---
 
