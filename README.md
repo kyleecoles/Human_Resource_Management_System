@@ -221,4 +221,4 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ## 📄 License
 
 This project is for academic purposes only.
-© 2026 Hope, Inc. HR System — IM2 Group 4 | New Era University
+© 2026 Hope, Inc. Human Resource Management System — IM2 Group 4 | New Era University
